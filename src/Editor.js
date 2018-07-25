@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import "./Editor.css";
 import { items } from "./meta";
 import JSONInput from "react-json-editor-ajrm";
@@ -36,12 +37,19 @@ class Editor extends React.Component {
       <div className="editor">
         <div className="header">
           <div className="iconBackWrapper">
-            <img alt={"back"} src={iconBack} />
+            <Link to="/">
+              <img alt={"back"} src={iconBack} />
+            </Link>
           </div>
           <h2>
             <span className="label">Component: </span>
             {name}
           </h2>
+          <div className="buttons">
+            <a className="button" onClick={() => this.generateProps()}>
+              Random Props
+            </a>
+          </div>
         </div>
         <div className="body">
           <div className="wrapperComponent">

@@ -6,6 +6,9 @@
   justify-content: space-between;
 
   .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #1e1e1e;
     text-align: center;
     color: white;
@@ -15,7 +18,15 @@
     }
 
     .iconBackWrapper {
-      
+      margin-left: 1rem;
+    }
+
+    h2 {
+      flex-grow: 1;
+    }
+
+    .buttons {
+      margin-right: 1rem;
     }
   }
 
@@ -30,7 +41,7 @@
 
     .wrapperEditor {
       flex-grow: 1;
-      border-top: 1px solid #333;
+      border-top: 10px solid #282828;
     }
   }
 }
