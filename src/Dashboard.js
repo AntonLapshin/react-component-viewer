@@ -1,62 +1,31 @@
 import React from "react";
 import { items } from "./meta";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./Dashboard.css";
-import JSONInput from "react-json-editor-ajrm";
-import generateProps from "./props";
+import Editor from "./Editor";
 
-class Dashboard extends React.Component {
-  state = { item: null };
-
-  selectItem(i) {
-    const item = items[i];
-    const props = generateProps(item.propTypes);
-    this.setState({ item, props });
-  }
-
-  updateProps(data) {
-    console.log(data);
-    this.setState({ ...this.state, props: data.jsObject });
-  }
-
-  render() {
-    const { item, props } = this.state;
-    if (item) {
-      const { name, Component } = item;
-      return (
-        <div className="wrapper">
-          <div className="header">
-            <h2>{name}</h2>
-          </div>
-          <div className="body">
-            <div className="wrapperComponent">
-              <Component {...props} />
-            </div>
-            <div className="wrapperEditor">
-              <JSONInput
-                id="json_editor"
-                placeholder={props}
-                width="100%"
-                height="100%"
-                onChange={data => this.updateProps(data)}
-              />
-            </div>
-          </div>
-        </div>
-      );
-    }
-    const listItems = items.map((c, i) => {
-      return (
-        <li key={i}>
-          <a onClick={() => this.selectItem(i)}>{c.name}</a>
-        </li>
-      );
-    });
+const List = () => {
+  const listItems = items.map((c, i) => {
     return (
-      <div>
-        <ul>{listItems}</ul>
-      </div>
+      <li key={i}>
+        <Link to={`/editor/${c.name}`}>{c.name}</Link>
+      </li>
     );
-  }
-}
+  });
+  return (
+    <div>
+      <ul>{listItems}</ul>
+    </div>
+  );
+};
+
+const Dashboard = () => (
+  <Router>
+    <React.Fragment>
+      <Route exact path="/" component={List} />
+      <Route path="/editor/:name" component={Editor} />
+    </React.Fragment>
+  </Router>
+);
 
 export default Dashboard;

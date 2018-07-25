@@ -1,0 +1,36 @@
+.editor {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .header {
+    background-color: #1e1e1e;
+    text-align: center;
+    color: white;
+
+    .label {
+      color: #666;
+    }
+
+    .iconBackWrapper {
+      
+    }
+  }
+
+  .body {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+
+    .wrapperComponent {
+      flex-grow: 2;
+    }
+
+    .wrapperEditor {
+      flex-grow: 1;
+      border-top: 1px solid #333;
+    }
+  }
+}
