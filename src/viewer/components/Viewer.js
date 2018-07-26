@@ -1,22 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import "./Editor.css";
-import { items } from "./meta";
+import "./Viewer.css";
+import { items } from "../generated/meta";
 import JSONInput from "react-json-editor-ajrm";
-import generateProps from "./props";
-import iconBack from "./icons/back.svg";
+import generateProps from "../utils/props";
+import iconBack from "../icons/back.svg";
 
-class Editor extends React.Component {
+class Viewer extends React.Component {
   state = { props: null };
 
-  updateProps(data) {
+  updateProps = data => {
     this.setState({ props: data.jsObject });
-  }
+  };
 
-  generateProps(propTypes) {
+  generateProps = propTypes => {
     this.setState({ props: generateProps(propTypes) });
-  }
+  };
 
   componentWillMount() {
     const { name } = this.props.match.params;
@@ -33,7 +33,7 @@ class Editor extends React.Component {
     const item = items.find(i => i.name === name);
     const { Component } = item;
     return (
-      <div className="editor">
+      <div className="viewer">
         <div className="header">
           <div className="iconBackWrapper">
             <Link to="/">
@@ -45,7 +45,7 @@ class Editor extends React.Component {
             {name}
           </h2>
           <div className="buttons">
-            <a className="button" onClick={() => this.generateProps()}>
+            <a className="button" onClick={this.generateProps}>
               Random Props
             </a>
           </div>
@@ -60,7 +60,7 @@ class Editor extends React.Component {
               placeholder={props}
               width="100%"
               height="100%"
-              onChange={data => this.updateProps(data)}
+              onChange={this.updateProps}
             />
           </div>
         </div>
@@ -69,8 +69,8 @@ class Editor extends React.Component {
   }
 }
 
-Editor.propTypes = {
+Viewer.propTypes = {
   match: PropTypes.object.isRequired
 };
 
-export default Editor;
+export default Viewer;

@@ -1,17 +1,16 @@
 import React from "react";
-import { items } from "./meta";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { items } from "../generated/meta";
 import { debounce } from "lodash";
 import "./Dashboard.css";
-import iconSearch from "./icons/search.svg";
-import Editor from "./Editor";
+import Viewer from "./Viewer";
 
 class List extends React.Component {
   state = { pattern: "" };
 
-  updatePattern = function(e) {
+  updatePattern = e => {
     this.setState({ pattern: e.target.value });
-  }.bind(this);
+  };
 
   render() {
     const pattern = this.state.pattern.toLowerCase();
@@ -20,15 +19,15 @@ class List extends React.Component {
       .map((item, i) => {
         return (
           <li key={i}>
-            <Link to={`/editor/${item.name}`}>{item.name}</Link>
+            <Link to={`/viewer/${item.name}`}>{item.name}</Link>
           </li>
         );
       });
 
     return (
       <div className="dashboard">
-        <div className="searchWrapper">
-          <div className="inputWrapper">
+        <div className="wrapperSearch">
+          <div className="wrapperInput">
             <input
               onChange={this.updatePattern}
               placeholder="Search..."
@@ -50,7 +49,7 @@ const Dashboard = () => (
   <Router>
     <React.Fragment>
       <Route exact path="/" component={List} />
-      <Route path="/editor/:name" component={Editor} />
+      <Route path="/viewer/:name" component={Viewer} />
     </React.Fragment>
   </Router>
 );
