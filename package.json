@@ -1,5 +1,5 @@
 {
-  "name": "run-react-component-dev",
+  "name": "react-component-viewer",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

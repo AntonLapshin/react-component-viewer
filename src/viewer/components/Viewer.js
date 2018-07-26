@@ -1,11 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./Viewer.css";
 import { items } from "../generated/meta";
 import JSONInput from "react-json-editor-ajrm";
 import generateProps from "../utils/props";
 import iconBack from "../icons/back.svg";
+
+window.notify = message =>
+  toast(message, {
+    position: toast.POSITION.BOTTOM_RIGHT,
+    className: "foo-bar"
+  });
 
 class Viewer extends React.Component {
   state = { props: null };
@@ -14,16 +22,20 @@ class Viewer extends React.Component {
     this.setState({ props: data.jsObject });
   };
 
-  generateProps = propTypes => {
-    this.setState({ props: generateProps(propTypes) });
+  generateProps = () => {
+    const { name } = this.props.match.params;
+    const item = items.find(i => i.name === name);    
+    this.setState({ props: generateProps(item.propTypes) });
   };
 
   componentWillMount() {
     const { name } = this.props.match.params;
     const item = items.find(i => i.name === name);
     const { props } = this.state;
-    if (!props) {
-      this.generateProps(item.propTypes);
+    if (item.mock) {
+      this.setState({ props: item.mock });
+    } else if (!props) {
+      this.generateProps();
     }
   }
 
@@ -62,6 +74,7 @@ class Viewer extends React.Component {
               height="100%"
               onChange={this.updateProps}
             />
+            <ToastContainer />
           </div>
         </div>
       </div>

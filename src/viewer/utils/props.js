@@ -1,5 +1,16 @@
+const PropTypesTransform = {
+  string: name => {
+    return name;
+  },
+  func: name => {
+    return () => window.notify(`${name} handler executed!`);
+  }
+};
+
 export default propTypes => {
-  return {
-    name: "XXXXX"
-  };
+  const props = Object.keys(propTypes).reduce((result, name) => {
+    result[name] = PropTypesTransform[propTypes[name]](name);
+    return result;
+  }, {});
+  return props;
 };

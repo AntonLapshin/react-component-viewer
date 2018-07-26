@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { items } from "../generated/meta";
-import { debounce } from "lodash";
 import "./Dashboard.css";
 import Viewer from "./Viewer";
 
