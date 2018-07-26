@@ -11,7 +11,6 @@ class Editor extends React.Component {
   state = { props: null };
 
   updateProps(data) {
-    console.log(data);
     this.setState({ props: data.jsObject });
   }
 

@@ -12,6 +12,7 @@
     background-color: #1e1e1e;
     text-align: center;
     color: white;
+    height: 5rem;
 
     .label {
       color: #666;
@@ -36,11 +37,11 @@
     justify-content: space-between;
 
     .wrapperComponent {
-      flex-grow: 2;
+      width: 60%;
     }
 
     .wrapperEditor {
-      flex-grow: 1;
+      width: 40%;
       border-top: 10px solid #282828;
     }
   }

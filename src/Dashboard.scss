@@ -2,12 +2,14 @@
 
 $hover: all 0.2s ease-in;
 $slide:all 0.5s 0.1s cubic-bezier(0.55,0,0.1,1);
-//COLORS
 $grey: #4f4f4f;
 $white: #ffffff;
 $green: #333;
 $transparent: rgba(255, 255, 255, 0);
+$input-font-size: 30px;
 $black-05: rgba(0, 0, 0, 0.05);
+$input-line-height: 70px;
+$font-family: Roboto Slab, sans-serif;
 
 html, body, #root {
   margin: 0;
@@ -82,36 +84,13 @@ html, body, #root {
   align-items: center;
   justify-content: space-between;
 
-  .pattern {
-    width: 500px;
-    margin-top: 1rem;
-    font-size: 1rem;
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid #9e9e9e;
-    border-radius: 0;
-    outline: none;
-    height: 3rem;
-    font-size: 16px;
-    padding: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    -webkit-box-sizing: content-box;
-    box-sizing: content-box;
-    -webkit-transition: border .3s, -webkit-box-shadow .3s;
-    transition: border .3s, -webkit-box-shadow .3s;
-    transition: box-shadow .3s, border .3s;
-    transition: box-shadow .3s, border .3s, -webkit-box-shadow .3s;    
-
-    &:focus {
-      border-bottom: 1px solid #2680a6;
-      -webkit-box-shadow: 0 1px 0 0 #2680a6;
-      box-shadow: 0 1px 0 0 #2680a6;      
-    }
-
-    &::placeholder {
-      color: #ddd;     
-    }    
+  .searchWrapper {
+    width: 100%;
+    height: 5rem;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .items {
@@ -126,6 +105,47 @@ html, body, #root {
       li {
         list-style: none;
       }
+    }
+  }
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.inputHighlight {
+  font-size: $input-font-size;
+  user-select: none;
+  line-height: $input-line-height;
+  border-top: 3px solid white;
+  position: absolute;
+  font-family: $font-family;
+  left: 0;
+  bottom: 0;
+  max-width: 100%;
+  height: 0;
+  color: transparent;
+  overflow: hidden;
+}
+
+input {
+  height: 60px;
+  width: 100%;
+  min-width: 100%;
+  padding: 0;
+  border-radius: 0;
+  line-height: $input-line-height;
+  font-family: $font-family;
+  background-color: transparent;
+  color: white;
+  font-size: $input-font-size;
+  border: none;
+  outline: none;
+  border-bottom: 3px solid #333333;
+
+  &:focus {
+    + .inputHighlight {
+      border-top: 3px solid #fbc91b;
     }
   }
 }
