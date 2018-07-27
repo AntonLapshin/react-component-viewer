@@ -1,4 +1,7 @@
 const PropTypesTransform = {
+  bool: name => {
+    return true;
+  },
   object: name => {
     return {};
   },

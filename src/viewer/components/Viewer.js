@@ -12,7 +12,7 @@ import iconBack from "../icons/back.svg";
 window.notify = message =>
   toast(message, {
     position: toast.POSITION.BOTTOM_RIGHT,
-    className: "foo-bar"
+    type: toast.TYPE.INFO
   });
 
 class Viewer extends React.Component {
