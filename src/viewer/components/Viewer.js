@@ -24,8 +24,14 @@ class Viewer extends React.Component {
 
   generateProps = () => {
     const { name } = this.props.match.params;
-    const item = items.find(i => i.name === name);    
+    const item = items.find(i => i.name === name);
     this.setState({ props: generateProps(item.Component.propTypes) });
+  };
+
+  resetProps = () => {
+    const { name } = this.props.match.params;
+    const item = items.find(i => i.name === name);
+    this.setState({ props: item.mock });
   };
 
   componentWillMount() {
@@ -57,6 +63,11 @@ class Viewer extends React.Component {
             {name}
           </h2>
           <div className="buttons">
+            {item.mock && (
+              <a className="button" onClick={this.resetProps}>
+                Reset Props
+              </a>
+            )}
             <a className="button" onClick={this.generateProps}>
               Random Props
             </a>
