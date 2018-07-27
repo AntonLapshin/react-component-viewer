@@ -103,6 +103,6 @@
     "extends": "react-app"
   },
   "viewer": {
-    "path": "src"
+    "path": "src/components"
   }
 }
