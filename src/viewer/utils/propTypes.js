@@ -1,23 +1,23 @@
 import PropTypes from 'prop-types';
 
-const types = ["string"]
+const types = [
+    'array',
+    'bool',
+    'func',
+    'object',
+    'string',
+    'symbol',
+    'node',
+    'element',
+    'any'
+];
 
-PropTypes.string = new Proxy(PropTypes.string, {
-  get: (target, prop) => {
-    if (prop === "secret"){
-      return "string";
-    }
-    return target[prop];
-  }
+types.forEach(type => {
+    PropTypes[type] = new Proxy(PropTypes[type], {
+        get: (target, prop) => (prop === 'secret' ? type : target[prop])
+    });
+
+    PropTypes[type].isRequired = new Proxy(PropTypes[type].isRequired, {
+        get: (target, prop) => (prop === 'secret' ? type : target[prop])
+    });
 });
-
-PropTypes.string.isRequired = new Proxy(PropTypes.string.isRequired, {
-  get: (target, prop) => {
-    if (prop === "secret"){
-      return "string";
-    }
-    return target[prop];
-  }
-});
-
-export default 1;
