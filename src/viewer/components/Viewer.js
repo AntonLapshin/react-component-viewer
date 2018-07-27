@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Viewer.css";
-import { items } from "../generated/meta2";
+import { items } from "../generated/meta";
 import JSONInput from "react-json-editor-ajrm";
 import generateProps from "../utils/props";
 import iconBack from "../icons/back.svg";

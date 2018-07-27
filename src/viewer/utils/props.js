@@ -1,4 +1,7 @@
 const PropTypesTransform = {
+  object: name => {
+    return {};
+  },
   string: name => {
     return name;
   },
@@ -7,7 +10,7 @@ const PropTypesTransform = {
   }
 };
 
-export default propTypes => {
+export default (propTypes = {}) => {
   const props = Object.keys(propTypes).reduce((result, name) => {
     result[name] = PropTypesTransform[propTypes[name].secret](name);
     return result;

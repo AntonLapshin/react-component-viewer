@@ -57,6 +57,7 @@
     "start": "npm-run-all -p watch-css start-js",
     "build-js": "node scripts/build.js",
     "build": "npm-run-all build-css build-js",
+    "generate": "node src/viewer/scripts/generate.js",
     "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {

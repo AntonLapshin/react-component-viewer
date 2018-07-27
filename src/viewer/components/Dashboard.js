@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { items } from "../generated/meta2";
+import { items } from "../generated/meta";
 import "./Dashboard.css";
 import Viewer from "./Viewer";
 
