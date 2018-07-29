@@ -1,13 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import './Viewer.css';
-import { items } from '../generated/meta';
-import JSONInput from 'react-json-editor-ajrm';
-import generateProps from '../utils/props';
-import iconBack from '../icons/back.svg';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./Viewer.css";
+import { items } from "../generated/meta";
+import JSONInput from "react-json-editor-ajrm";
+import generateProps from "../utils/props";
+import iconBack from "../icons/back.svg";
 
 window.notify = message =>
   toast(message, {
@@ -19,7 +19,14 @@ class Viewer extends React.Component {
   state = { props: null };
 
   updateProps = data => {
-    this.setState({ props: data.jsObject });
+    const oldProps = this.state.props;
+    const props = data.jsObject;
+    Object.keys(oldProps).forEach(key => {
+      if (typeof oldProps[key] === "function") {
+        props[key] = oldProps[key];
+      }
+    });
+    this.setState({ props });
   };
 
   generateProps = () => {
@@ -57,7 +64,7 @@ class Viewer extends React.Component {
         <div className="header">
           <div className="iconBackWrapper">
             <Link to="/">
-              <img alt={'back'} src={iconBack} />
+              <img alt={"back"} src={iconBack} />
             </Link>
           </div>
           <h2>

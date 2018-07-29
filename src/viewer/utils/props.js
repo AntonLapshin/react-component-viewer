@@ -15,10 +15,10 @@ const strings = {
 
 const PropTypesTransform = {
   bool: () => dummyjson.parse("{{boolean}}") === 'true',
-  number: name => dummyjson.parse("{{int 1 100}}"),
-  array: name =>
+  number: () => dummyjson.parse("{{int 1 100}}"),
+  array: () =>
     ["{{lorem 1}}", "{{lorem 1}}", "{{lorem1}}"].map(i => dummyjson.parse(i)),
-  object: name => {
+  object: () => {
     return {};
   },
   string: name => {
@@ -30,8 +30,9 @@ const PropTypesTransform = {
       ];
     return dummyjson.parse(template);
   },
-  any: name => dummyjson.parse("{{lorem 5}}"),
-  node: name => "",
+  any: () => dummyjson.parse("{{lorem 5}}"),
+  node: () => "",
+  element: () => "",
   func: name => () => window.notify(`${name} handler executed!`)
 };
 

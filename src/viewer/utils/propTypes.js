@@ -14,10 +14,10 @@ const types = [
 
 types.forEach(type => {
     PropTypes[type] = new Proxy(PropTypes[type], {
-        get: (target, prop) => (prop === 'secret' ? type : target[prop])
+        get: (target, prop) => (prop === 'type' ? type : target[prop])
     });
 
     PropTypes[type].isRequired = new Proxy(PropTypes[type].isRequired, {
-        get: (target, prop) => (prop === 'secret' ? type : target[prop])
+        get: (target, prop) => (prop === 'type' ? type : target[prop])
     });
 });
