@@ -14,7 +14,7 @@ const strings = {
 };
 
 const PropTypesTransform = {
-  bool: () => dummyjson.parse("{{boolean}}") === 'true',
+  bool: () => dummyjson.parse("{{boolean}}") === "true",
   number: () => dummyjson.parse("{{int 1 100}}"),
   array: () =>
     ["{{lorem 1}}", "{{lorem 1}}", "{{lorem1}}"].map(i => dummyjson.parse(i)),
