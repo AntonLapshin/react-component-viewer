@@ -2,12 +2,13 @@
 
 import App from "../../../src/components/App.js";
 import Button from "../../../src/components/Button.js";
+import ButtonMock from "../../../src/components/Button.mock.js";
 import ButtonPanel from "../../../src/components/ButtonPanel.js";
 import Display from "../../../src/components/Display.js";
 
 export const items = [
   { name: 'App', Component: App },
-  { name: 'Button', Component: Button },
+  { name: 'Button', Component: Button, mock: ButtonMock  },
   { name: 'ButtonPanel', Component: ButtonPanel },
   { name: 'Display', Component: Display }
 ];
