@@ -1,13 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import "./Viewer.css";
-import { items } from "../generated/meta";
-import JSONInput from "react-json-editor-ajrm";
-import generateProps from "../utils/props";
-import iconBack from "../icons/back.svg";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './Viewer.css';
+import { items } from '../generated/meta';
+import JSONInput from 'react-json-editor-ajrm';
+import generateProps from '../utils/props';
+import iconBack from '../icons/back.svg';
 
 window.notify = message =>
   toast(message, {
@@ -38,7 +38,9 @@ class Viewer extends React.Component {
     const { name } = this.props.match.params;
     const item = items.find(i => i.name === name);
     const { props } = this.state;
-    if (item.mock) {
+    if (item.props) {
+      this.setState({ props: item.props });
+    } else if (item.mock) {
       this.setState({ props: item.mock });
     } else if (!props) {
       this.generateProps();
@@ -55,7 +57,7 @@ class Viewer extends React.Component {
         <div className="header">
           <div className="iconBackWrapper">
             <Link to="/">
-              <img alt={"back"} src={iconBack} />
+              <img alt={'back'} src={iconBack} />
             </Link>
           </div>
           <h2>
