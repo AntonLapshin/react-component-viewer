@@ -48,7 +48,7 @@ export default {
 
 ## Development
 
-Work on your components in `/src` folder
+Work on your components in `/src/components` folder
 
 > There is an awesome project for someone who needs more. [React Cosmos](https://github.com/react-cosmos/react-cosmos)
 
