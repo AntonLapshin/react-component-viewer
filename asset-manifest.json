@@ -1,7 +1,7 @@
 {
-  "main.css": "static/css/main.8d4c6ce5.css",
-  "main.css.map": "static/css/main.8d4c6ce5.css.map",
-  "main.js": "static/js/main.ac0ddba6.js",
-  "main.js.map": "static/js/main.ac0ddba6.js.map",
-  "static/media/back.svg": "static/media/back.54a89510.svg"
+  "main.css": "react-component-viewer/static/css/main.8d4c6ce5.css",
+  "main.css.map": "react-component-viewer/static/css/main.8d4c6ce5.css.map",
+  "main.js": "react-component-viewer/static/js/main.085ce703.js",
+  "main.js.map": "react-component-viewer/static/js/main.085ce703.js.map",
+  "react-component-viewer/static/media/back.svg": "react-component-viewer/static/media/back.54a89510.svg"
 }
