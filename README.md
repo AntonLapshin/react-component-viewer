@@ -33,7 +33,7 @@ http://localhost:3000/ will be opened in your browser automatically
 
 ## Mock data
 
-Add a file with the following name: `<componentname>.mock.js` and set props to a component:
+Add a file with the following name: `<componentname>.mock.js` and define props for a component:
 
 ```
 export default {
@@ -50,7 +50,7 @@ export default {
 
 Work on your components in `/src/components` folder
 
-> There is an awesome project for someone who needs more. [React Cosmos](https://github.com/react-cosmos/react-cosmos)
+> There are awesome projects for someone who needs more: [React Cosmos](https://github.com/react-cosmos/react-cosmos) and [Storybook](https://github.com/storybooks/storybook)
 
 ## License
 
