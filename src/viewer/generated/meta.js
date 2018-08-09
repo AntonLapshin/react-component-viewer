@@ -4,6 +4,8 @@ import CustomerMarker from "../../../src/components/CustomerMarker/CustomerMarke
 import CustomerMarkerMock from "../../../src/components/CustomerMarker/CustomerMarker.mock.js";
 import CustomerWidget from "../../../src/components/CustomerWidget/CustomerWidget.js";
 import CustomerWidgetMock from "../../../src/components/CustomerWidget/CustomerWidget.mock.js";
+import ErrorBoundary from "../../../src/components/ErrorBoundary/ErrorBoundary.js";
+import ErrorBoundaryMock from "../../../src/components/ErrorBoundary/ErrorBoundary.mock.js";
 import Grid from "../../../src/components/Grid/Grid.js";
 import GridMock from "../../../src/components/Grid/Grid.mock.js";
 import MapWidget from "../../../src/components/MapWidget/MapWidget.js";
@@ -16,6 +18,7 @@ import ValueWidget from "../../../src/components/ValueWidget/ValueWidget.js";
 export const items = [
   { name: 'CustomerMarker', Component: CustomerMarker, mock: CustomerMarkerMock },
   { name: 'CustomerWidget', Component: CustomerWidget, mock: CustomerWidgetMock },
+  { name: 'ErrorBoundary', Component: ErrorBoundary, mock: ErrorBoundaryMock },
   { name: 'Grid', Component: Grid, mock: GridMock },
   { name: 'MapWidget', Component: MapWidget, mock: MapWidgetMock },
   { name: 'NavBar', Component: NavBar, mock: NavBarMock },
