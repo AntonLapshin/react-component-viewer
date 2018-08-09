@@ -5,10 +5,17 @@ import Button from "../../../src/components/Button.js";
 import ButtonMock from "../../../src/components/Button.mock.js";
 import ButtonPanel from "../../../src/components/ButtonPanel.js";
 import Display from "../../../src/components/Display.js";
+import NavBar from "../../../src/components/NavBar/NavBar.js";
+import NavBarMock from "../../../src/components/NavBar/NavBar.mock.js";
+import NavItem from "../../../src/components/NavItem/NavItem.js";
+import ValueWidget from "../../../src/components/ValueWidget/ValueWidget.js";
 
 export const items = [
   { name: 'App', Component: App },
-  { name: 'Button', Component: Button, mock: ButtonMock  },
+  { name: 'Button', Component: Button, mock: ButtonMock },
   { name: 'ButtonPanel', Component: ButtonPanel },
-  { name: 'Display', Component: Display }
+  { name: 'Display', Component: Display },
+  { name: 'NavBar', Component: NavBar, mock: NavBarMock },
+  { name: 'NavItem', Component: NavItem },
+  { name: 'ValueWidget', Component: ValueWidget }
 ];

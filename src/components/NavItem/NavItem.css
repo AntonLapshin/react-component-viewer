@@ -1,0 +1,5 @@
+.nav-item {
+  padding: 0.5rem 1rem;
+  cursor: pointer; }
+  .nav-item.active {
+    text-decoration: underline; }

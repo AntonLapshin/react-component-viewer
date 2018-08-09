@@ -1,0 +1,17 @@
+.value-widget {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  .title {
+    color: #ccc;
+  }
+
+  .value {
+    color: #333;
+    font-weight: bold;
+    flex-grow: 1;
+    font-size: 2rem;
+  }
+}
