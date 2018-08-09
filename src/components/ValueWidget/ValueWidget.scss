@@ -1,11 +1,13 @@
 .value-widget {
   display: flex;
+  height: 100%;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 
   .title {
     color: #ccc;
+    margin-bottom: 0.5rem;
   }
 
   .value {

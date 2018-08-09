@@ -1,10 +1,12 @@
 .value-widget {
   display: flex;
+  height: 100%;
   flex-direction: column;
   justify-content: space-between;
   align-items: center; }
   .value-widget .title {
-    color: #ccc; }
+    color: #ccc;
+    margin-bottom: 0.5rem; }
   .value-widget .value {
     color: #333;
     font-weight: bold;

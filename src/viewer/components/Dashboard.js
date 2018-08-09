@@ -18,7 +18,7 @@ class List extends React.Component {
       .map((item, i) => {
         return (
           <li key={i}>
-            <Link to={`/viewer/${item.name}`}>{item.name}</Link>
+            <Link to={`${process.env.PUBLIC_URL}/viewer/${item.name}`}>{item.name}</Link>
           </li>
         );
       });
@@ -47,8 +47,11 @@ class List extends React.Component {
 const Dashboard = () => (
   <Router>
     <React.Fragment>
-      <Route exact path="/" component={List} />
-      <Route path="/viewer/:name" component={Viewer} />
+      <Route exact path={process.env.PUBLIC_URL + "/"} component={List} />
+      <Route
+        path={process.env.PUBLIC_URL + "/viewer/:name"}
+        component={Viewer}
+      />
     </React.Fragment>
   </Router>
 );

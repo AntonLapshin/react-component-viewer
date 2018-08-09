@@ -63,7 +63,7 @@ class Viewer extends React.Component {
       <div className="viewer">
         <div className="header">
           <div className="iconBackWrapper">
-            <Link to="/">
+            <Link to={process.env.PUBLIC_URL + "/"}>
               <img alt={"back"} src={iconBack} />
             </Link>
           </div>
