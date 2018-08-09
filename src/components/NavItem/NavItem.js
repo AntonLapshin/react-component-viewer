@@ -3,12 +3,10 @@ import PropTypes from "prop-types";
 import "./NavItem.css";
 
 const NavItem = props => {
-  const classes = ["nav-item"];
-  if (props.isActive) {
-    classes.push("active");
-  }
+  let classes = "nav-item";
+  props.isSelected && (classes += " active");
   return (
-    <div className={classes.join(" ")} onClick={props.clickHandler}>
+    <div className={classes} onClick={props.clickHandler}>
       {props.name}
     </div>
   );

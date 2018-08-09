@@ -6,7 +6,13 @@ import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps";
 import { MarkerWithLabel } from "react-google-maps/lib/components/addons/MarkerWithLabel";
 
 const mapStyles = { height: "100%" };
-const labelAnchor = { x: 0, y: 0 };
+const labelStyles = {
+  textAlign: "center",
+  width: "100px"
+};
+const labelAnchor = { x: 50, y: 0 };
+const defaultZoom = 9;
+const defaultCenter = { lat: -34.397, lng: 150.644 };
 
 const MapWidget = compose(
   withProps({
@@ -19,14 +25,14 @@ const MapWidget = compose(
   withScriptjs,
   withGoogleMap
 )(props => (
-  <GoogleMap defaultZoom={8} defaultCenter={{ lat: -34.397, lng: 150.644 }}>
+  <GoogleMap defaultZoom={defaultZoom} defaultCenter={defaultCenter}>
     {props.items.map((item, i) => {
       const { lat, lng, label } = item;
       return (
         <MarkerWithLabel
           key={i}
           position={{ lat, lng }}
-          labelStyle={{}}
+          labelStyle={labelStyles}
           labelAnchor={labelAnchor}
           onClick={() => props.clickHandler(i)}
         >

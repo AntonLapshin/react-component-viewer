@@ -1,0 +1,7 @@
+.customer-marker {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 1rem; }
+  .customer-marker.selected {
+    background-color: gold;
+    color: #333; }

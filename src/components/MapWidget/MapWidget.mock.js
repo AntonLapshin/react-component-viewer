@@ -1,29 +1,34 @@
 import React from "react";
+import CustomerMarker from "../CustomerMarker/CustomerMarker";
 
-const createLabel = (name, amount) => (
-  <div>
-    {name} {amount}
-  </div>
-);
+const createLabel = props => <CustomerMarker {...props} />;
 
 export default {
   items: [
     {
-      label: createLabel("Customer 1", 1000),
+      label: createLabel({
+        balance: "$1,461.65",
+        isSelected: true
+      }),
       lat: -34.397,
       lng: 150.644
     },
     {
-      label: createLabel("Customer 2", 1200),
+      label: createLabel({
+        balance: "$2,461.65",
+        isSelected: false
+      }),
       lat: -34.497,
-      lng: 150.644
+      lng: 150.744
     },
     {
-      label: createLabel("Customer 3", 1300),
-      lat: -34.597,
-      lng: 150.644
+      label: createLabel({
+        balance: "$3,461.65",
+        isSelected: false
+      }),
+      lat: -34.697,
+      lng: 150.544
     }
   ],
-  clickHandler: index =>
-    window.notify("Selected item: " + index)
+  clickHandler: index => window.notify("Selected item: " + index)
 };
