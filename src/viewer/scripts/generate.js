@@ -15,7 +15,7 @@ const readDir = dir => {
         if (!!entries.find(e => e.name === name)) {
           return;
         }
-        const mockPath = path.replace(name, name + ".mock");
+        const mockPath = path.replace(name + ".js", name + ".mock.js");
         entries.push({
           name,
           path,
@@ -39,7 +39,7 @@ const imports = entries
 
 const items = entries
   .map(c => {
-    const mock = c.mockPath ? `, mock: ${c.name}Mock ` : "";
+    const mock = c.mockPath ? `, mock: ${c.name}Mock` : "";
     return `  { name: '${c.name}', Component: ${c.name}${mock} }`;
   })
   .join(",\r\n");
