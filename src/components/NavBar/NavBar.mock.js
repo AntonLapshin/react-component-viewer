@@ -10,6 +10,6 @@ export default {
       name: "Help"
     }
   ],
-  pathname: "Home",
+  selectedItemName: "Home",
   changeHandler: item => window.notify("Selected item: " + item.name)
 };

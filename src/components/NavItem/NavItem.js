@@ -4,7 +4,7 @@ import "./NavItem.css";
 
 const NavItem = props => {
   let classes = "nav-item";
-  props.isSelected && (classes += " active");
+  props.isActive && (classes += " active");
   return (
     <div className={classes} onClick={props.clickHandler}>
       {props.name}

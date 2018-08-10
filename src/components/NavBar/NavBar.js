@@ -10,7 +10,7 @@ const NavBar = props => {
         <NavItem
           key={i}
           {...item}
-          isActive={props.pathname === item.name}
+          isActive={props.selectedItemName === item.name}
           clickHandler={() => props.changeHandler(item)}
         />
       ))}
@@ -21,7 +21,7 @@ const NavBar = props => {
 NavBar.props = {
   items: PropTypes.array.isRequired,
   changeHandler: PropTypes.func.isRequired,
-  pathname: PropTypes.string
+  selectedItemName: PropTypes.string
 };
 
 export default NavBar;

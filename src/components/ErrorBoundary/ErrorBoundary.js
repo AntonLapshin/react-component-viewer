@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-class ErrorBoundary extends React.Component {
+class ErrorBoundary extends React.PureComponent {
   state = { hasError: false };
 
   componentDidCatch(error, info) {
