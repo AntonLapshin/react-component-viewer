@@ -4,7 +4,7 @@ import { items } from "../generated/meta";
 import "./Dashboard.css";
 import Viewer from "./Viewer";
 
-class List extends React.Component {
+class List extends React.PureComponent {
   state = { pattern: "" };
 
   updatePattern = e => {

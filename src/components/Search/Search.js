@@ -1,37 +1,42 @@
 import React from "react";
 import PropTypes from "prop-types";
-import debounce from "lodash/debounce";
 import "./Search.css";
 
-const defaultDebounceDelay = 300;
+class Search extends React.PureComponent {
+  constructor({ value }) {
+    super();
+    this.state = { value: value || "" };
+  }
 
-const Search = ({
-  value = "",
-  changeHandler,
-  debounceDelay = defaultDebounceDelay
-}) => {
-  const debounceHandler = debounce(
-    value => changeHandler && changeHandler(value),
-    debounceDelay
-  );
+  componentWillReceiveProps({ value }) {
+    this.setState({ value });
+  }
 
-  return (
-    <div className="search">
-      <input
-        type="text"
-        className="search-input"
-        onChange={e => (e.persist(), debounceHandler(e.target.value))}
-        placeholder="Search..."
-        value={value}
-        spellCheck={false}
-      />
-      <span className="input-highlight">{value.replace(/ /g, "_")}</span>
-    </div>
-  );
-};
+  updateValue = e => {
+    const value = e.target.value;
+    this.setState({ value });
+    this.props.changeHandler && this.props.changeHandler(value);
+  };
+
+  render() {
+    const { value } = this.state;
+    return (
+      <div className="search">
+        <input
+          type="text"
+          className="search-input"
+          onChange={this.updateValue}
+          placeholder="Search..."
+          value={value}
+          spellCheck={false}
+        />
+        <span className="input-highlight">{value.replace(/ /g, "_")}</span>
+      </div>
+    );
+  }
+}
 
 Search.propTypes = {
-  debounceDelay: PropTypes.number,
   value: PropTypes.string,
   changeHandler: PropTypes.func
 };
