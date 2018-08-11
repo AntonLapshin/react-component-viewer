@@ -6,8 +6,10 @@ import CustomerWidget from "../../../src/components/CustomerWidget/CustomerWidge
 import CustomerWidgetMock from "../../../src/components/CustomerWidget/CustomerWidget.mock.js";
 import ErrorBoundary from "../../../src/components/ErrorBoundary/ErrorBoundary.js";
 import ErrorBoundaryMock from "../../../src/components/ErrorBoundary/ErrorBoundary.mock.js";
+import ErrorMessage from "../../../src/components/ErrorMessage/ErrorMessage.js";
 import Grid from "../../../src/components/Grid/Grid.js";
 import GridMock from "../../../src/components/Grid/Grid.mock.js";
+import LoadIndicator from "../../../src/components/LoadIndicator/LoadIndicator.js";
 import MapWidget from "../../../src/components/MapWidget/MapWidget.js";
 import MapWidgetMock from "../../../src/components/MapWidget/MapWidget.mock.js";
 import NavBar from "../../../src/components/NavBar/NavBar.js";
@@ -19,7 +21,9 @@ export const items = [
   { name: 'CustomerMarker', Component: CustomerMarker, mock: CustomerMarkerMock },
   { name: 'CustomerWidget', Component: CustomerWidget, mock: CustomerWidgetMock },
   { name: 'ErrorBoundary', Component: ErrorBoundary, mock: ErrorBoundaryMock },
+  { name: 'ErrorMessage', Component: ErrorMessage },
   { name: 'Grid', Component: Grid, mock: GridMock },
+  { name: 'LoadIndicator', Component: LoadIndicator },
   { name: 'MapWidget', Component: MapWidget, mock: MapWidgetMock },
   { name: 'NavBar', Component: NavBar, mock: NavBarMock },
   { name: 'NavItem', Component: NavItem },

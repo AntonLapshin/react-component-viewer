@@ -3,7 +3,8 @@
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  padding: 1rem; }
   .value-widget .title {
     color: #ccc;
     margin-bottom: 0.5rem; }

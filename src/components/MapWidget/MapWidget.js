@@ -11,8 +11,8 @@ const labelStyles = {
   width: "100px"
 };
 const labelAnchor = { x: 50, y: 0 };
-const defaultZoom = 9;
-const defaultCenter = { lat: -34.397, lng: 150.644 };
+const defaultZoom = 2;
+const defaultCenter = { lat: 48, lng: 11 };
 
 const MapWidget = compose(
   withProps({
@@ -34,7 +34,7 @@ const MapWidget = compose(
           position={{ lat, lng }}
           labelStyle={labelStyles}
           labelAnchor={labelAnchor}
-          onClick={() => props.clickHandler(i)}
+          onClick={() => props.clickHandler(item.id)}
         >
           {label}
         </MarkerWithLabel>
@@ -46,6 +46,7 @@ const MapWidget = compose(
 MapWidget.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.string.isRequired,
       label: PropTypes.node.isRequired,
       lat: PropTypes.number.isRequired,
       lng: PropTypes.number.isRequired

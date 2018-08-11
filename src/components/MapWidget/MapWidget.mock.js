@@ -6,6 +6,7 @@ const createLabel = props => <CustomerMarker {...props} />;
 export default {
   items: [
     {
+      id: '1',
       label: createLabel({
         balance: "$1,461.65",
         isSelected: true
@@ -14,6 +15,7 @@ export default {
       lng: 150.644
     },
     {
+      id: '2',
       label: createLabel({
         balance: "$2,461.65",
         isSelected: false
@@ -22,6 +24,7 @@ export default {
       lng: 150.744
     },
     {
+      id: '3',
       label: createLabel({
         balance: "$3,461.65",
         isSelected: false
