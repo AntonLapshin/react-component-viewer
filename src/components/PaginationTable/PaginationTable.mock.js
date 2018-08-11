@@ -1293,5 +1293,6 @@ export default {
     tags: item.tags.join(","),
     friends: item.friends.map(f => f.name).join(",")
   })),
-  visibleColumns: ["name", "age", "company", "balance"]
+  visibleColumns: ["name", "age", "company", "balance"],
+  rowClickHandler: item => window.notify("Clicked " + item.guid)
 };

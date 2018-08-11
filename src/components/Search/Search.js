@@ -9,7 +9,10 @@ class Search extends React.PureComponent {
   }
 
   componentWillReceiveProps({ value }) {
-    this.setState({ value });
+    if (value === this.props.value){
+      return;
+    }
+    this.setState({ value: value || "" });
   }
 
   updateValue = e => {

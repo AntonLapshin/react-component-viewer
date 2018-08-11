@@ -11,7 +11,7 @@ const CustomerWidget = props => (
       <p>{props.name}</p>
       <div>Age: {props.age}</div>
       <div>Balance: {props.balance}</div>
-      <a href="javascript:void(0)" onClick={props.clickHandler}>
+      <a href="!#" onClick={props.clickHandler}>
         Go to details
       </a>
     </div>
