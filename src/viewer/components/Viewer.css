@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between; }
-  .viewer .header {
+  .viewer .viewer-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,20 +12,20 @@
     text-align: center;
     color: white;
     height: 5rem; }
-    .viewer .header .label {
+    .viewer .viewer-header .viewer-label {
       color: #666; }
-    .viewer .header .iconBackWrapper {
+    .viewer .viewer-header .iconBackWrapper {
       margin-left: 1rem; }
-    .viewer .header h2 {
+    .viewer .viewer-header h2 {
       flex-grow: 1; }
-    .viewer .header .buttons .button {
+    .viewer .viewer-header .buttons .button {
       margin-right: 1rem; }
-  .viewer .body {
+  .viewer .viewer-body {
     flex-grow: 1;
     display: flex;
     justify-content: space-between; }
-    .viewer .body .wrapperComponent {
+    .viewer .viewer-body .wrapperComponent {
       width: 60%; }
-    .viewer .body .wrapperEditor {
+    .viewer .viewer-body .wrapperEditor {
       width: 40%;
       border-top: 10px solid #282828; }

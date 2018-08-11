@@ -15,6 +15,8 @@ import MapWidgetMock from "../../../src/components/MapWidget/MapWidget.mock.js";
 import NavBar from "../../../src/components/NavBar/NavBar.js";
 import NavBarMock from "../../../src/components/NavBar/NavBar.mock.js";
 import NavItem from "../../../src/components/NavItem/NavItem.js";
+import PaginationTable from "../../../src/components/PaginationTable/PaginationTable.js";
+import PaginationTableMock from "../../../src/components/PaginationTable/PaginationTable.mock.js";
 import ValueWidget from "../../../src/components/ValueWidget/ValueWidget.js";
 
 export const items = [
@@ -27,5 +29,6 @@ export const items = [
   { name: 'MapWidget', Component: MapWidget, mock: MapWidgetMock },
   { name: 'NavBar', Component: NavBar, mock: NavBarMock },
   { name: 'NavItem', Component: NavItem },
+  { name: 'PaginationTable', Component: PaginationTable, mock: PaginationTableMock },
   { name: 'ValueWidget', Component: ValueWidget }
 ];

@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: space-between;
 
-  .header {
+  .viewer-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,7 +14,7 @@
     color: white;
     height: 5rem;
 
-    .label {
+    .viewer-label {
       color: #666;
     }
 
@@ -31,7 +31,7 @@
     }
   }
 
-  .body {
+  .viewer-body {
     flex-grow: 1;
     display: flex;
     justify-content: space-between;

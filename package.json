@@ -46,6 +46,7 @@
     "react-json-editor-ajrm": "^2.4.9",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
+    "react-table": "^6.8.6",
     "react-toastify": "^4.1.0",
     "resolve": "1.6.0",
     "style-loader": "0.19.0",

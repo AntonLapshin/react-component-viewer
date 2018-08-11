@@ -61,14 +61,14 @@ class Viewer extends React.Component {
     const { Component } = item;
     return (
       <div className="viewer">
-        <div className="header">
+        <div className="viewer-header">
           <div className="iconBackWrapper">
             <Link to={process.env.PUBLIC_URL + "/"}>
               <img alt={"back"} src={iconBack} />
             </Link>
           </div>
           <h2>
-            <span className="label">Component: </span>
+            <span className="viewer-label">Component: </span>
             {name}
           </h2>
           <div className="buttons">
@@ -82,7 +82,7 @@ class Viewer extends React.Component {
             </a>
           </div>
         </div>
-        <div className="body">
+        <div className="viewer-body">
           <div className="wrapperComponent">
             <Component {...props} />
           </div>
