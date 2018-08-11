@@ -10,4 +10,5 @@ export { default as MapWidget } from "./MapWidget/MapWidget.js";
 export { default as NavBar } from "./NavBar/NavBar.js";
 export { default as NavItem } from "./NavItem/NavItem.js";
 export { default as PaginationTable } from "./PaginationTable/PaginationTable.js";
+export { default as Search } from "./Search/Search.js";
 export { default as ValueWidget } from "./ValueWidget/ValueWidget.js";

@@ -17,6 +17,7 @@ import NavBarMock from "../../../src/components/NavBar/NavBar.mock.js";
 import NavItem from "../../../src/components/NavItem/NavItem.js";
 import PaginationTable from "../../../src/components/PaginationTable/PaginationTable.js";
 import PaginationTableMock from "../../../src/components/PaginationTable/PaginationTable.mock.js";
+import Search from "../../../src/components/Search/Search.js";
 import ValueWidget from "../../../src/components/ValueWidget/ValueWidget.js";
 
 export const items = [
@@ -30,5 +31,6 @@ export const items = [
   { name: 'NavBar', Component: NavBar, mock: NavBarMock },
   { name: 'NavItem', Component: NavItem },
   { name: 'PaginationTable', Component: PaginationTable, mock: PaginationTableMock },
+  { name: 'Search', Component: Search },
   { name: 'ValueWidget', Component: ValueWidget }
 ];

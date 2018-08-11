@@ -15,7 +15,7 @@ const strings = {
 
 const PropTypesTransform = {
   bool: () => dummyjson.parse("{{boolean}}") === "true",
-  number: () => dummyjson.parse("{{int 1 100}}"),
+  number: () => +dummyjson.parse("{{int 1 100}}"),
   array: () =>
     ["{{lorem 1}}", "{{lorem 1}}", "{{lorem1}}"].map(i => dummyjson.parse(i)),
   object: () => {
@@ -28,12 +28,12 @@ const PropTypesTransform = {
           key => name.toLowerCase().indexOf(key) !== -1
         ) || "lorem"
       ];
-    return dummyjson.parse(template);
+    return dummyjson.parse(template).toString();
   },
   any: () => dummyjson.parse("{{lorem 5}}"),
   node: () => "",
   element: () => "",
-  func: name => () => window.notify(`${name} handler executed!`)
+  func: name => value => window.notify(`${name} handler executed with value: ${value}!`)
 };
 
 export default (propTypes = {}) => {

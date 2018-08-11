@@ -11,12 +11,16 @@ const showError = message => {
 };
 
 class ErrorMessage extends React.Component {
-  componentDidMount() {
+  showErrorIfExists() {
     this.props.message && showError(this.props.message);
   }
 
+  componentDidMount() {
+    this.showErrorIfExists();
+  }
+
   componentDidUpdate() {
-    this.props.message && showError(this.props.message);
+    this.showErrorIfExists();
   }
 
   render() {
